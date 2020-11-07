@@ -7,31 +7,104 @@ using System.Text;
 
 namespace ServiceMtk_P1_20180140067
 {
+    //Perhatikan catatan 'NOTE' dibawah ini
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class Matematika : IMatematika
     {
         public int Bagi(int a, int b)
         {
-            return a / b;
-            //throw new NotImplementedException();
+            try
+            {
+                return a / b;
+                //throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                // secara default
+                // throw new Exception(ex.Message)
+                // pesan error secara default
+                // throw new faultException("Pesan Salah");
+                // untuk melambangkan pesan error yang dikirim ke client
+
+                MathFault mf = new MathFault();
+                mf.Kode = "Inputan Yang Anda Masukan Salah";
+                mf.Pesan = "Masukan input yang benar";
+                throw new FaultException<MathFault>(mf);
+            }
         }
 
         public int Kali(int a, int b)
         {
-            return a * b;
-            //throw new NotImplementedException();
+            try
+            {
+                return a * b;
+                //throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                // secara default
+                // throw new Exception(ex.Message)
+                // pesan error secara default
+                // throw new faultException("Pesan Salah");
+                // untuk melambangkan pesan error yang dikirim ke client
+
+                MathFault mf = new MathFault();
+                mf.Kode = "Inputan Yang Anda Masukan Salah";
+                mf.Pesan = "Masukan input yang benar";
+                throw new FaultException<MathFault>(mf);
+            }
         }
 
         public int Kurang(int a, int b)
         {
-            return a - b;
-            //throw new NotImplementedException();
+            try
+            {
+                return a - b;
+                //throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                // secara default
+                // throw new Exception(ex.Message)
+                // pesan error secara default
+                // throw new faultException("Pesan Salah");
+                // untuk melambangkan pesan error yang dikirim ke client
+
+                MathFault mf = new MathFault();
+                mf.Kode = "Inputan Yang Anda Masukan Salah";
+                mf.Pesan = "Masukan input yang benar";
+                throw new FaultException<MathFault>(mf);
+            }
         }
 
         public int Tambah(int a, int b)
         {
-            return a + b;
-            //throw new NotImplementedException();
+            try
+            {
+                return a + b;
+                //throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                // secara default
+                // throw new Exception(ex.Message)
+                // pesan error secara default
+                // throw new faultException("Pesan Salah");
+                // untuk melambangkan pesan error yang dikirim ke client
+
+                MathFault mf = new MathFault();
+                mf.Kode = "Inputan Yang Anda Masukan Salah";
+                mf.Pesan = "Masukan input yang benar";
+                throw new FaultException<MathFault>(mf);
+            }
         }
 
         //TKoordinat:nama methodnya, a,b = input seperti int.
@@ -39,11 +112,29 @@ namespace ServiceMtk_P1_20180140067
         //dengan yb lalu dimasukkan ke hasil
         public Koordinat TKoordinat(Koordinat a, Koordinat b)
         {
-            Koordinat hasil = new Koordinat();
-            hasil.X = a.X + b.X;
-            hasil.Y = a.Y + b.Y;
-            return hasil;
-            //throw new NotImplementedException();
+            try
+            {
+                Koordinat hasil = new Koordinat();
+                hasil.X = a.X + b.X;
+                hasil.Y = a.Y + b.Y;
+                return hasil;
+                //throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                // secara default
+                // throw new Exception(ex.Message)
+                // pesan error secara default
+                // throw new faultException("Pesan Salah");
+                // untuk melambangkan pesan error yang dikirim ke client
+
+                MathFault mf = new MathFault();
+                mf.Kode = "Inputan Yang Anda Masukan Salah";
+                mf.Pesan = "Masukan input yang benar";
+                throw new FaultException<MathFault>(mf);
+            }
         }
     }
 }
